@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STYLE HUB | Fashion Store</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display for editorial fashion appeal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        noir: '#171717',
+                        gold: {
+                            400: '#ffca7a',
+                            500: '#ffbd59',
+                            600: '#e5a33e',
+                        },
+                        sand: '#f0e8df',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-neutral-50 text-neutral-900 antialiased selection:bg-gold-500 selection:text-noir">
+
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-40 bg-noir/95 backdrop-blur-md text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="#home" class="text-2xl sm:text-3xl font-bold tracking-widest uppercase">
+                STYLE <span class="text-gold-500">HUB.</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-gold-500 transition">Home</a>
+                <a href="#categories" class="hover:text-gold-500 transition">Categories</a>
+                <a href="#products" class="hover:text-gold-500 transition">Products</a>
+                <a href="#offers" class="hover:text-gold-500 transition">Offers</a>
+                <a href="#collection" class="hover:text-gold-500 transition">Collections</a>
+                <a href="#contact" class="hover:text-gold-500 transition">Contact</a>
+            </nav>
+
+            <!-- Cart & Mobile Menu Controls -->
+            <div class="flex items-center gap-3">
+                <button id="open-cart-btn" aria-label="Open Shopping Cart" class="relative p-2.5 rounded-xl bg-neutral-800 hover:bg-gold-500 hover:text-noir transition flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <span class="hidden sm:inline text-sm font-semibold">Bag</span>
+                    <span id="cart-badge" class="bg-gold-500 text-noir text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+                </button>
+
+                <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Dropdown -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-neutral-900 border-t border-neutral-800 px-4 py-3 space-y-1">
+            <a href="#home" class="block py-2.5 px-3 rounded-lg hover:bg-neutral-800 hover:text-gold-500 transition">Home</a>
+            <a href="#categories" class="block py-2.5 px-3 rounded-lg hover:bg-neutral-800 hover:text-gold-500 transition">Categories</a>
+            <a href="#products" class="block py-2.5 px-3 rounded-lg hover:bg-neutral-800 hover:text-gold-500 transition">Products</a>
+            <a href="#offers" class="block py-2.5 px-3 rounded-lg hover:bg-neutral-800 hover:text-gold-500 transition">Offers</a>
+            <a href="#collection" class="block py-2.5 px-3 rounded-lg hover:bg-neutral-800 hover:text-gold-500 transition">Collections</a>
+            <a href="#contact" class="block py-2.5 px-3 rounded-lg hover:bg-neutral-800 hover:text-gold-500 transition">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section id="home" class="relative min-h-[520px] lg:min-h-[600px] flex items-center justify-center text-center text-white px-4 py-20 bg-noir overflow-hidden">
+        <img 
+            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1400" 
+            onerror="this.onerror=null; this.src='https://placehold.co/1400x700/171717/ffbd59?text=STYLE+HUB+FASHION';"
+            alt="Fashion model shopping" 
+            class="absolute inset-0 w-full h-full object-cover opacity-55"
+        >
+        <div class="absolute inset-0 bg-gradient-to-t from-noir/80 via-noir/40 to-noir/30"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto">
+            <span class="inline-block uppercase tracking-widest text-xs font-bold bg-gold-500 text-noir px-4 py-1.5 rounded-full mb-5">
+                New Season Arrivals
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl font-bold mb-5 tracking-tight drop-shadow">
+                DISCOVER YOUR STYLE
+            </h1>
+            <p class="text-lg sm:text-xl text-neutral-200 mb-8 max-w-xl mx-auto">
+                Fashion that speaks louder than words. Curated apparel crafted for modern confidence.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#products" class="bg-gold-500 hover:bg-white text-noir font-bold px-8 py-4 rounded-xl transition transform hover:-translate-y-0.5 shadow-lg">
+                    SHOP NOW
+                </a>
+                <a href="#collection" class="bg-white/15 hover:bg-white/25 backdrop-blur-sm border border-white/40 text-white font-semibold px-8 py-4 rounded-xl transition">
+                    VIEW LOOKBOOK
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-2">Shop By Category</h2>
+            <p class="text-neutral-500">Explore the latest fashion trends tailored for everyone.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <div onclick="filterByCategory('Women')" class="group relative h-80 rounded-2xl overflow-hidden cursor-pointer shadow-md">
+                <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/262626/ffbd59?text=Women';"
+                     alt="Women's fashion" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-5 left-5 right-5 flex justify-between items-center text-white">
+                    <h3 class="text-2xl font-bold tracking-wide">Women</h3>
+                    <span class="text-sm font-semibold bg-gold-500 text-noir px-3 py-1 rounded-full">Explore →</span>
+                </div>
+            </div>
+
+            <div onclick="filterByCategory('Men')" class="group relative h-80 rounded-2xl overflow-hidden cursor-pointer shadow-md">
+                <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=600" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/262626/ffbd59?text=Men';"
+                     alt="Men's fashion" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-5 left-5 right-5 flex justify-between items-center text-white">
+                    <h3 class="text-2xl font-bold tracking-wide">Men</h3>
+                    <span class="text-sm font-semibold bg-gold-500 text-noir px-3 py-1 rounded-full">Explore →</span>
+                </div>
+            </div>
+
+            <div onclick="filterByCategory('Kids')" class="group relative h-80 rounded-2xl overflow-hidden cursor-pointer shadow-md">
+                <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=600" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/262626/ffbd59?text=Kids';"
+                     alt="Kids fashion" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-5 left-5 right-5 flex justify-between items-center text-white">
+                    <h3 class="text-2xl font-bold tracking-wide">Kids</h3>
+                    <span class="text-sm font-semibold bg-gold-500 text-noir px-3 py-1 rounded-full">Explore →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Banner -->
+    <section id="offers" class="bg-noir text-white py-14 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <span class="text-xs uppercase tracking-widest text-gold-500 font-bold">Limited Time Event</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gold-500 mt-2 mb-3">MEGA FASHION SALE!</h2>
+            <p class="text-lg sm:text-xl text-neutral-300 mb-7">Get up to <span class="text-white font-bold">50% OFF</span> on selected seasonal collections.</p>
+            <a href="#products" class="inline-block bg-gold-500 hover:bg-white text-noir font-bold px-8 py-3.5 rounded-xl transition">
+                EXPLORE OFFERS
+            </a>
+        </div>
+    </section>
+
+    <!-- Trending Products -->
+    <section id="products" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+            <div>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-2">Trending Products</h2>
+                <p class="text-neutral-500">Our most loved fashion picks this week.</p>
+            </div>
+            <!-- Category Filter Pills -->
+            <div class="flex flex-wrap gap-2" id="filter-buttons">
+                <button data-filter="All" class="filter-btn bg-noir text-white px-4 py-2 rounded-full text-sm font-semibold transition">All</button>
+                <button data-filter="Women" class="filter-btn bg-white text-neutral-700 hover:bg-neutral-200 border border-neutral-200 px-4 py-2 rounded-full text-sm font-semibold transition">Women</button>
+                <button data-filter="Men" class="filter-btn bg-white text-neutral-700 hover:bg-neutral-200 border border-neutral-200 px-4 py-2 rounded-full text-sm font-semibold transition">Men</button>
+                <button data-filter="Kids" class="filter-btn bg-white text-neutral-700 hover:bg-neutral-200 border border-neutral-200 px-4 py-2 rounded-full text-sm font-semibold transition">Kids</button>
+            </div>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <!-- Products injected dynamically via JS for live filtering & cart integration -->
+        </div>
+    </section>
+
+    <!-- Featured Collection -->
+    <section id="collection" class="bg-sand py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-2">Featured Collection</h2>
+                <p class="text-neutral-600">A new collection for a new you.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-white p-6 sm:p-10 rounded-3xl shadow-sm">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/800x500/171717/ffbd59?text=Summer+Fashion+2026';"
+                     alt="Summer collection" class="w-full h-80 sm:h-96 object-cover rounded-2xl">
+
+                <div class="text-left">
+                    <span class="inline-block text-xs font-bold uppercase tracking-wider bg-sand text-neutral-800 px-3 py-1 rounded-full mb-3">
+                        Exclusive Drop
+                    </span>
+                    <h3 class="font-serif text-3xl sm:text-4xl font-bold mb-4">Summer Fashion 2026</h3>
+                    <p class="text-neutral-600 leading-relaxed mb-7 text-base sm:text-lg">
+                        Refresh your wardrobe with our exclusive summer collection. Discover breathable fabrics, effortless silhouettes, and vibrant designs tailored for every occasion.
+                    </p>
+                    <a href="#products" class="inline-block bg-noir hover:bg-gold-500 text-white hover:text-noir font-bold px-8 py-3.5 rounded-xl transition">
+                        SHOP COLLECTION
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Statement Banner -->
+    <section class="bg-white py-16 px-4 text-center border-b border-neutral-100">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-3">Fashion Starts With You!</h2>
+            <p class="text-neutral-500 mb-7 text-lg">Find your favourite styles and create your own signature fashion statement.</p>
+            <a href="#categories" class="inline-block bg-gold-500 hover:bg-noir text-noir hover:text-white font-bold px-8 py-3.5 rounded-xl transition">
+                START SHOPPING
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-2">Contact Us</h2>
+        <p class="text-neutral-500 mb-10">We are here to help you with sizing, orders, and styling advice!</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-neutral-100">
+                <div class="text-2xl mb-2">📍</div>
+                <h3 class="font-bold mb-1">Store Address</h3>
+                <p class="text-sm text-neutral-600">Fashion Street, Hyderabad, India</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-neutral-100">
+                <div class="text-2xl mb-2">📞</div>
+                <h3 class="font-bold mb-1">Phone</h3>
+                <p class="text-sm text-neutral-600">+91 98765 43210</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-neutral-100">
+                <div class="text-2xl mb-2">📧</div>
+                <h3 class="font-bold mb-1">Email</h3>
+                <p class="text-sm text-neutral-600">stylehub@gmail.com</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-neutral-100">
+                <div class="text-2xl mb-2">🕒</div>
+                <h3 class="font-bold mb-1">Working Hours</h3>
+                <p class="text-sm text-neutral-600">Mon – Sat: 10 AM – 8 PM</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-noir text-white py-10 px-4 text-center">
+        <h3 class="text-2xl font-bold tracking-widest mb-2">STYLE <span class="text-gold-500">HUB.</span></h3>
+        <p class="text-neutral-400 text-sm mb-2">Your Fashion, Your Identity.</p>
+        <p class="text-neutral-500 text-xs">© 2026 Style Hub. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Slide-Over Shopping Cart Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+        <div id="cart-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-xs"></div>
+        <div class="fixed inset-y-0 right-0 max-w-md w-full bg-white shadow-2xl flex flex-col z-10">
+            <div class="p-6 border-b border-neutral-200 flex justify-between items-center">
+                <h3 class="font-serif text-2xl font-bold">Shopping Bag</h3>
+                <button id="close-cart-btn" class="p-2 rounded-lg hover:bg-neutral-100 text-neutral-600">
+                    ✕
+                </button>
+            </div>
+
+            <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+                <!-- Cart items rendered dynamically -->
+            </div>
+
+            <div class="p-6 border-t border-neutral-200 bg-neutral-50">
+                <div class="flex justify-between items-center text-lg font-bold mb-4">
+                    <span>Subtotal</span>
+                    <span id="cart-total">₹0</span>
+                </div>
+                <button id="checkout-btn" class="w-full bg-noir hover:bg-gold-500 text-white hover:text-noir font-bold py-3.5 rounded-xl transition disabled:opacity-40 disabled:cursor-not-allowed">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Non-intrusive Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-noir text-white px-5 py-3.5 rounded-xl shadow-xl border border-neutral-700 flex items-center gap-3">
+        <span class="w-2.5 h-2.5 rounded-full bg-gold-500"></span>
+        <span id="toast-message" class="text-sm font-medium">Item added to cart!</span>
+    </div>
+
+    <script>
+        // Product Catalog Data
+        const products = [
+            {
+                id: 1,
+                name: "Casual Jacket",
+                category: "Women",
+                price: 1499,
+                oldPrice: 2499,
+                discount: "40% OFF",
+                image: "https://images.unsplash.com/photo-1544441893-675973e31985?w=500"
+            },
+            {
+                id: 2,
+                name: "Classic T-Shirt",
+                category: "Men",
+                price: 599,
+                oldPrice: 999,
+                discount: "40% OFF",
+                image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500"
+            },
+            {
+                id: 3,
+                name: "Stylish Jeans",
+                category: "Men",
+                price: 1199,
+                oldPrice: 1999,
+                discount: "40% OFF",
+                image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500"
+            },
+            {
+                id: 4,
+                name: "Party Wear Dress",
+                category: "Women",
+                price: 1799,
+                oldPrice: 2999,
+                discount: "40% OFF",
+                image: "https://images.unsplash.com/photo-1566206091558-7f218b696731?w=500"
+            },
+            {
+                id: 5,
+                name: "Kids Denim Overalls",
+                category: "Kids",
+                price: 899,
+                oldPrice: 1499,
+                discount: "40% OFF",
+                image: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=500"
+            }
+        ];
+
+        let cart = [];
+        let activeCategory = "All";
+
+        const productGrid = document.getElementById("product-grid");
+        const cartBadge = document.getElementById("cart-badge");
+        const cartItemsEl = document.getElementById("cart-items");
+        const cartTotalEl = document.getElementById("cart-total");
+        const checkoutBtn = document.getElementById("checkout-btn");
+
+        // Render Product Cards
+        function renderProducts() {
+            const filtered = activeCategory === "All" 
+                ? products 
+                : products.filter(p => p.category === activeCategory);
+
+            productGrid.innerHTML = filtered.map(product => `
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-neutral-100 transition duration-300 transform hover:-translate-y-1.5 flex flex-col">
+                    <div class="relative">
+                        <img src="${product.image}" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/500x400/262626/ffbd59?text=${encodeURIComponent(product.name)}';"
+                             alt="${product.name}" class="w-full h-64 object-cover">
+                        <span class="absolute top-3 left-3 bg-emerald-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">
+                            ${product.discount}
+                        </span>
+                        <span class="absolute top-3 right-3 bg-white/90 text-noir text-xs font-semibold px-2.5 py-1 rounded-full">
+                            ${product.category}
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-lg text-neutral-900 mb-1">${product.name}</h3>
+                            <div class="flex items-baseline gap-2 mb-4">
+                                <span class="text-xl font-bold text-orange-600">₹${product.price.toLocaleString()}</span>
+                                <span class="text-sm text-neutral-400 line-through">₹${product.oldPrice.toLocaleString()}</span>
+                            </div>
+                        </div>
+                        <button onclick="addToCart(${product.id})" class="w-full py-3 bg-noir hover:bg-gold-500 text-white hover:text-noir font-semibold rounded-xl transition">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        // Category Filter Handlers
+        function filterByCategory(category) {
+            activeCategory = category;
+            document.querySelectorAll(".filter-btn").forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.className = "filter-btn bg-noir text-white px-4 py-2 rounded-full text-sm font-semibold transition";
+                } else {
+                    btn.className = "filter-btn bg-white text-neutral-700 hover:bg-neutral-200 border border-neutral-200 px-4 py-2 rounded-full text-sm font-semibold transition";
+                }
+            });
+            renderProducts();
+            document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+        }
+
+        document.querySelectorAll(".filter-btn").forEach(btn => {
+            btn.addEventListener("click", () => filterByCategory(btn.dataset.filter));
+        });
+
+        // Cart Functions
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+            updateCartUI();
+            showToast(`${product.name} added to your shopping bag!`);
+        }
+
+        function changeQty(productId, delta) {
+            const item = cart.find(i => i.id === productId);
+            if (!item) return;
+            item.qty += delta;
+            if (item.qty <= 0) {
+                cart = cart.filter(i => i.id !== productId);
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+            cartBadge.textContent = totalItems;
+            cartTotalEl.textContent = `₹${totalPrice.toLocaleString()}`;
+            checkoutBtn.disabled = cart.length === 0;
+
+            if (cart.length === 0) {
+                cartItemsEl.innerHTML = `
+                    <div class="text-center py-16 text-neutral-400">
+                        <p class="text-4xl mb-3">🛍️</p>
+                        <p class="font-medium text-neutral-600">Your shopping bag is empty.</p>
+                        <p class="text-sm mt-1">Explore our trending styles to add items.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            cartItemsEl.innerHTML = cart.map(item => `
+                <div class="flex items-center gap-4 bg-neutral-50 p-3 rounded-xl border border-neutral-200">
+                    <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-lg">
+                    <div class="flex-1">
+                        <h4 class="font-bold text-sm text-neutral-900">${item.name}</h4>
+                        <p class="text-sm font-semibold text-orange-600">₹${item.price.toLocaleString()}</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="changeQty(${item.id}, -1)" class="w-7 h-7 rounded-lg bg-white border border-neutral-300 font-bold hover:bg-neutral-100">-</button>
+                        <span class="text-sm font-bold w-5 text-center">${item.qty}</span>
+                        <button onclick="changeQty(${item.id}, 1)" class="w-7 h-7 rounded-lg bg-white border border-neutral-300 font-bold hover:bg-neutral-100">+</button>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        // Toast Notification
+        let toastTimer;
+        function showToast(msg) {
+            const toast = document.getElementById("toast");
+            document.getElementById("toast-message").textContent = msg;
+            toast.classList.remove("translate-y-20", "opacity-0");
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.add("translate-y-20", "opacity-0");
+            }, 2600);
+        }
+
+        // Drawer & Mobile Menu Controls
+        const cartDrawer = document.getElementById("cart-drawer");
+        document.getElementById("open-cart-btn").addEventListener("click", () => cartDrawer.classList.remove("hidden"));
+        document.getElementById("close-cart-btn").addEventListener("click", () => cartDrawer.classList.add("hidden"));
+        document.getElementById("cart-backdrop").addEventListener("click", () => cartDrawer.classList.add("hidden"));
+
+        checkoutBtn.addEventListener("click", () => {
+            cart = [];
+            updateCartUI();
+            cartDrawer.classList.add("hidden");
+            showToast("Thank you! Your order has been placed.");
+        });
+
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+        mobileMenu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+        });
+
+        // Initial Render
+        renderProducts();
+        updateCartUI();
+    </script>
+</body>
+</html>
